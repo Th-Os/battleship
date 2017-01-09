@@ -1,0 +1,196 @@
+@import 'colors';
+@import 'mixins';
+@import 'animations';
+
+$font-stack: 'Verdana', 'Geneva', sans-serif;
+$main-width: 60em;
+$main-height: 45em;
+
+@font-face {
+    font-family: 'FontAwesome'; font-weight: normal; font-style: normal;
+    src:url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot?v=4.5.0');
+    src:url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+}
+
+h1 {
+    margin: 0.3333333333em 0;
+    font-size: 3.375em;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    margin: 0.6666666667em 0;
+    font-size: 1em;
+}
+
+h6 {
+    margin: 0.3333333333em 0;
+    font-size: 0.8333333333em
+}
+
+.icon {
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-light;
+    font: $font-stack;
+    font-size: 62.5%;
+    line-height: 1.2;
+}
+
+@media all and (min-width: 48em) and (min-height: 44em) {
+    body {
+        font-size: 68.75%;
+    }
+}
+
+@media all and (min-width: 52em) and (min-height: 48em) {
+    body {
+        font-size: 75%;
+    }
+}
+
+@media all and (min-width: 56em) and (min-height: 52em) {
+    body {
+        font-size: 81.25%;
+    }
+}
+
+@media all and (min-width: 60em) and (min-height: 56em) {
+    body {
+        font-size: 87.5%;
+    }
+}
+
+@media all and (min-width: 64em) and (min-height: 60em) {
+    body {
+        font-size: 93.75%;
+    }
+}
+
+@media all and (min-width: 68em) and (min-height: 64em) {
+    body {
+        font-size: 100%;
+    }
+}
+
+header {
+    padding: 1.25em;
+    position: relative;
+    background: $blue;
+    color: $white;
+
+    h1 {
+        margin: 0 auto;
+        width: 18em;
+    }
+}
+
+.decal {
+    position: relative;
+    width: 100%;
+    height: 0.125em;
+    background-color: $bg-medium;
+    border-bottom: 0.125em solid $white;
+
+}
+
+main {
+    margin: 5em auto;
+    position: relative;
+    width: 60em;
+    height: 45em;
+
+    .bs-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        @include clearfix();
+
+        .bs-overlay {
+            position: absolute;
+            width: 62.5%;
+            height: 83.3333333333%;
+            z-index: 10;
+            display: none;
+
+            &.win .win {
+                display: block;
+            }
+
+            &.fail .fail {
+                display: block;
+            }
+
+            .win,
+            .fail {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: none;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .win {
+                animation: zoomInBottom 4s ease-out forwards;
+                transform-origin: 80% 80%;
+
+                #win {
+                    animation: tada 4s forwards;
+                    transform-origin: 50% 50%;
+                }
+            }
+
+            .fail {
+                animation: zoomInTop 4s ease-in forwards;
+                transform-origin: 50% 50%;
+
+                #fail {
+                    animation: hinge 4s forwards;
+                    transform-origin: 80% 40%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 6em;
+}

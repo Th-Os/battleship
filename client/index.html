@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Battleship</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Battleship</h1>
+        </header>
+        <div class="decal"></div>
+        <main>
+            <div class="bs-container">
+                <div class="bs-overlay">
+                    <div class="win">
+                        <img id="bg-win" src="assets/bg-win.png" alt="win background">
+                        <img id="win" src="assets/win.png" alt="win letters">
+                    </div>
+                    <div class="fail">
+                        <img id="bg-fail" src="assets/bg-fail.png" alt="fail background">
+                        <img id="fail" src="assets/fail.png" alt="fail letters">
+                    </div>
+                </div>
+                <div class="bs-game">
+                    <div class="maps">
+                        <div class="player">
+                            <div class="map">
+                                <canvas id="bs-player-map" width="500" height="500"></canvas>
+                            </div>
+                        </div>
+                        <div class="opponent">
+                            <div class="map">
+                                <canvas id="bs-opponent-map" width="500" height="500"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard">
+                        <div class="powerups"></div>
+                        <button class="wait"><span class="icon"></span><label></label></button>
+                        <div class="timer"><span class="icon"></span><label></label></div>
+                    </div>
+                </div>
+                <div class="bs-score">
+                    <div class="match"></div>
+                    <div class="user"></div>
+                </div>
+                <div class="bs-chat">
+                    <div class="window">
+                        <ul id="bs-chat-conversation"></ul>
+                    </div>
+                    <input id="bs-chat-input" type="text" placeholder="Say something...">
+                    <div id="bs-chat-login">
+                        <div class="login">
+                            <h4>Please enter your name:</h4>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+		<script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoomInTop {
+    0% {
+        opacity: 0;
+        transform: scale3d(2, 2, 2);
+    }
+
+    12.5% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+    93.75% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale3d(0.33, 0.33, 0.33);
+    }
+}
+
+@keyframes zoomInBottom {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.33, 0.33, 0.33);
+    }
+
+    12.5% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+    93.75% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale3d(2, 2, 2);
+    }
+}
+
+@keyframes tada {
+    37.5% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    42.75%, 47.5% {
+        transform: scale3d(0.75, 0.75, 0.75) rotate3d(0, 0, 1, -9deg);
+    }
+
+    52.5%, 62.5%, 72.5%, 82.5% {
+        transform: scale3d(1.33, 1.33, 1.33) rotate3d(0, 0, 1, 6deg);
+    }
+
+    57.5%, 67.5%, 77.5% {
+        transform: scale3d(1.33, 1.33, 1.33) rotate3d(0, 0, 1, -6deg);
+    }
+
+    87.5% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes hinge {
+    50% {
+        transform: rotate3d(0, 0, 0, 0deg);
+        animation-timing-function: ease-in-out;
+    }
+
+    60% {
+        transform: rotate3d(0, 0, 1, -100deg);
+        animation-timing-function: ease-in-out;
+    }
+
+    70% {
+        transform: rotate3d(0, 0, 1, -40deg);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, -80deg);
+        animation-timing-function: ease-in-out;
+    }
+
+    90% {
+        transform: rotate3d(0, 0, 1, -60deg);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, 40em, 0);
+        opacity: 0;
+    }
+}

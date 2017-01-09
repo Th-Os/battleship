@@ -1,0 +1,161 @@
+@import 'colors';
+@import 'mixins';
+@import 'animations';
+
+$perspective: 1000px;
+
+.bs-game {
+    position: relative;
+    width: 62.5%;
+    height: 100%;
+    float: left;
+    perspective: $perspective;
+    user-select: none;
+
+    &.flipped {
+        .maps{
+            transform: translateX(-100%) rotateY(-180deg);
+        }
+    }
+
+    .maps {
+        position: relative;
+        width: 100%;
+        height: 83.3333333333%;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: right center;
+    }
+
+    .player,
+    .opponent {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        backface-visibility: hidden;
+
+        .map {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            canvas {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .player {
+        transform: rotateY(0);
+    }
+
+    .opponent {
+        transform: rotateY(-180deg);
+    }
+
+    .dashboard {
+        margin-top: 1.6666666667%;
+        position: relative;
+        width: 100%;
+        height: 15%;
+
+        @include clearfix();
+
+        .timer {
+            margin-left: 2%;
+            padding: 0.75em;
+            width: 18%;
+            height: 100%;
+            border: 0.125em solid $gray;
+            background: $bg-light;
+            box-sizing: border-box;
+            float: right;
+            text-align: center;
+
+            &.alert {
+                .icon {
+                    color: $red;
+                }
+
+                label {
+                    color: $darkred;
+                }
+            }
+
+            .icon {
+                margin: 0.25em;
+                display: block;
+                color: $gray;
+                font-size: 2.5em;
+
+                &:before {
+                    content: "\f017";
+                }
+            }
+
+            label {
+                color: $black;
+            }
+        }
+
+        button {
+            margin-left: 2%;
+            padding: 0.75em;
+            width: 18%;
+            height: 100%;
+            border: 0.125em solid $white;
+            background: $bg-light;
+            box-shadow: 0.125em 0.125em 0.25em $gray;
+            box-sizing: border-box;
+            float: right;
+            text-align: center;
+
+            &:active {
+                box-shadow: 0 0 0.05em $gray;
+            }
+
+            .icon {
+                margin: 0.25em;
+                display: block;
+                font-size: 2.5em;
+            }
+
+            &.wait {
+                &.alert {
+                    label {
+                        color: $red;
+                    }
+                    .icon:before {
+                        color: $darkred;
+                    }
+                }
+
+                .icon {
+                    animation: spin 2s linear infinite;
+
+                    &:before {
+                        color: $gray;
+                        content: "\f1ce";
+                    }
+                }
+            }
+
+            &.ready .icon:before {
+                color: $green;
+                content: "\f00c";
+            }
+
+            &.flip .icon:before {
+                color: $gray;
+                content: "\f01e";
+            }
+
+            &.restart .icon:before {
+                color: $blue;
+                content: "\f021";
+            }
+        }
+    }
+}

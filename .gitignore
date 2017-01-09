@@ -1,0 +1,4 @@
+.env
+client/css
+client/js
+node_modules

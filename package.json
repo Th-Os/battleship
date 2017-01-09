@@ -1,0 +1,47 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "A javascript implementation of the famous boardgame as an online multiplayer using node.js and socket.io",
+  "main": "server/index.js",
+  "scripts": {
+    "clean": "rimraf client/css & rimraf client/js & node server/db/drop.js",
+    "build": "node server/db/create.js & webpack --optimize-minimize",
+    "serve": "node server/index.js",
+    "start": "npm run clean && npm run build && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rschweizer@bitbucket.org/mimme16ws/battleship.git"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "socket.io",
+    "battleship"
+  ],
+  "author": "Thomas Oswald & Robert Schweizer",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/mimme16ws/battleship#readme",
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.5.0",
+    "body-parser": "^1.15.0",
+    "css-loader": "^0.23.1",
+    "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.4.2",
+    "pg": "^4.4.6",
+    "pg-query": "^0.11.0",
+    "postcss-loader": "^0.8.1",
+    "rimraf": "^2.5.2",
+    "sass-loader": "^3.1.2",
+    "socket.io": "^1.4.5",
+    "style-loader": "^0.13.0",
+    "uglify-js": "^2.6.1",
+    "webpack": "^2.1.0-beta.1"
+  }
+}

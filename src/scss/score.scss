@@ -1,0 +1,104 @@
+@import 'colors';
+@import 'mixins';
+
+.bs-score {
+    margin-left: 3.75%;
+    margin-bottom: 1.6666666667%;
+    padding: 0.75em;
+    position: relative;
+    width: 33.3333333333%;
+    height: 15%;
+    background: $bg-light;
+    border: 0.125em solid $white;
+    box-sizing: border-box;
+    float: left;
+    overflow: hidden;
+
+    @include clearfix();
+
+    .match {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: left;
+
+        .row {
+            box-sizing: border-box;
+
+            @include clearfix();
+
+            .ship {
+                background: $gray;
+                display: block;
+                float: left;
+
+                &.sunk {
+                    background: $darkred;
+                }
+            }
+        }
+    }
+
+    .user {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: left;
+
+        .name {
+            color: $darkblue;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+
+            & + .score {
+                margin-top: 0;
+            }
+        }
+
+        .score {
+            margin-top: 0.175em;
+            color: $gray;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .label {
+            color: $gray;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .stats {
+            margin: 0 auto;
+            position: relative;
+            width: 60%;
+
+            @include clearfix();
+
+            .wins {
+                width: 30%;
+                float: left;
+                color: $darkgreen;
+                text-align: right;
+            }
+
+            .separator {
+                width: 40%;
+                float: left;
+                color: $gray;
+                text-align: center;
+            }
+
+            .fails {
+                width: 30%;
+                float: left;
+                color: $darkred;
+                text-align: left;
+            }
+        }
+    }
+}
